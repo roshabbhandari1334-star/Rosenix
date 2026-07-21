@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rosenix AI OS | Enterprise Agentic Platform</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800;900&family=Rajdhani:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="/static/css/jarvis.css">
+</head>
+<body>
+    <div class="cyber-grid"></div>
+    <div class="cyber-particles"></div>
+
+    <div class="jarvis-container">
+        <!-- Top Navigation Header -->
+        <header class="hud-header">
+            <div class="brand-zone">
+                <div class="brand-icon">
+                    <i class="fa-solid fa-brain fa-spin"></i>
+                </div>
+                <div class="brand-titles">
+                    <h1>ROSENIX <span class="badge-v2">AGENTIC AI OS</span></h1>
+                    <span class="sub-heading">DEVELOPED BY <strong style="color: #00f0ff; letter-spacing: 1px;">ROSHAB BHANDARI</strong> &bull; AUTONOMOUS BOT PLATFORM</span>
+                </div>
+            </div>
+
+            <div class="status-zone">
+                <div class="agent-selector-wrapper">
+                    <i class="fa-solid fa-user-gear"></i>
+                    <select id="agent-select" class="cyber-select">
+                        <option value="manager">MANAGER AGENT (SWARM)</option>
+                        <option value="coding">CODING AGENT (PAIR PROGRAMMER)</option>
+                        <option value="research">RESEARCH AGENT (DEEP WEB)</option>
+                        <option value="devops">DEVOPS AGENT (SYSTEM & SHELL)</option>
+                        <option value="security">CYBERSEC AGENT (DEFENSIVE)</option>
+                        <option value="browser">BROWSER AGENT (PLAYWRIGHT)</option>
+                    </select>
+                </div>
+
+                <div class="status-pill online">
+                    <span class="status-dot"></span>
+                    <span id="system-status-text">AUTONOMOUS CORE</span>
+                </div>
+
+                <div class="tts-toggle-box" id="tts-toggle">
+                    <i class="fa-solid fa-volume-high"></i>
+                    <span>VOICE: <strong id="tts-status-val">ON</strong></span>
+                </div>
+
+                <div class="clock-display" id="live-clock">00:00:00</div>
+            </div>
+        </header>
+
+        <!-- Main Body Grid -->
+        <main class="hud-body">
+            <!-- Left Side Core HUD & Telemetry -->
+            <aside class="left-panel">
+                <!-- Quantum Arc Reactor -->
+                <div class="arc-reactor-card">
+                    <div class="arc-header">QUANTUM REACTOR CORE</div>
+                    <div class="arc-container">
+                        <svg class="arc-svg" viewBox="0 0 200 200">
+                            <circle class="ring ring-1" cx="100" cy="100" r="90" />
+                            <circle class="ring ring-2" cx="100" cy="100" r="75" />
+                            <circle class="ring ring-3" cx="100" cy="100" r="58" />
+                            <circle class="core-glow" cx="100" cy="100" r="38" />
+                            <g class="core-symbol">
+                                <polygon points="100,72 124,114 76,114" fill="none" stroke="rgba(0, 240, 255, 0.9)" stroke-width="2.5"/>
+                                <circle cx="100" cy="100" r="8" fill="#00f0ff" />
+                            </g>
+                        </svg>
+                        <div class="reactor-state-text" id="reactor-state">STATE: IDLE</div>
+                    </div>
+                </div>
+
+                <!-- Hardware & Agentic System Telemetry -->
+                <div class="telemetry-card">
+                    <div class="panel-title">
+                        <i class="fa-solid fa-microchip"></i> SYSTEM & MCP STATUS
+                    </div>
+                    
+                    <div class="meter-group">
+                        <div class="meter-label">
+                            <span>CPU LOAD</span>
+                            <span id="val-cpu">--%</span>
+                        </div>
+                        <div class="bar-track">
+                            <div class="bar-fill" id="fill-cpu" style="width: 0%"></div>
+                        </div>
+                    </div>
+
+                    <div class="meter-group">
+                        <div class="meter-label">
+                            <span>RAM UTILIZATION</span>
+                            <span id="val-ram">-- GB</span>
+                        </div>
+                        <div class="bar-track">
+                            <div class="bar-fill memory" id="fill-ram" style="width: 0%"></div>
+                        </div>
+                    </div>
+
+                    <div class="meter-group">
+                        <div class="meter-label">
+                            <span>DISK STORAGE</span>
+                            <span id="val-disk">--%</span>
+                        </div>
+                        <div class="bar-track">
+                            <div class="bar-fill disk" id="fill-disk" style="width: 0%"></div>
+                        </div>
+                    </div>
+
+                    <!-- MCP & Memory Status -->
+                    <div class="mcp-memory-widget">
+                        <div><i class="fa-solid fa-plug"></i> MCP Servers: <span class="highlight">2 Healthy</span></div>
+                        <div><i class="fa-solid fa-memory"></i> Short Memory: <span id="val-short-mem">0</span></div>
+                        <div><i class="fa-solid fa-database"></i> Episodic Memory: <span id="val-ep-mem">0</span></div>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Main Interactive Feed -->
+            <section class="main-panel">
+                <!-- Action Chips -->
+                <div class="quick-chips">
+                    <button class="chip" data-cmd="Execute full autonomous system audit and security diagnostic goal">
+                        <i class="fa-solid fa-shield-halved"></i> Autonomous Audit Goal
+                    </button>
+                    <button class="chip" data-cmd="Write an async Python tool runner script and test execution">
+                        <i class="fa-solid fa-code"></i> Autonomous Coding Goal
+                    </button>
+                    <button class="chip" data-cmd="Search web for agentic AI architectures and summarize report">
+                        <i class="fa-solid fa-globe"></i> Autonomous Research Goal
+                    </button>
+                    <button class="chip" data-cmd="Inspect uploaded document and extract key intelligence">
+                        <i class="fa-solid fa-file-lines"></i> RAG Document Goal
+                    </button>
+                </div>
+
+                <!-- Drag & Drop Upload Zone -->
+                <div class="upload-dropzone" id="dropzone">
+                    <input type="file" id="file-input" style="display: none;" multiple>
+                    <div class="dropzone-content" id="dropzone-trigger">
+                        <i class="fa-solid fa-cloud-arrow-up drop-icon"></i>
+                        <span><strong>UPLOAD ANYTHING</strong> &bull; Drag & drop files here or <span class="highlight">browse</span></span>
+                        <span class="drop-sub">Code (.py, .js, .json), Docs (.pdf, .txt, .md), Images, Datasets</span>
+                    </div>
+                    <div class="uploaded-files-pills" id="uploaded-files-list"></div>
+                </div>
+
+                <!-- Live Chat & Autonomous Step Feed -->
+                <div class="command-feed" id="chat-feed">
+                    <div class="message-card jarvis">
+                        <div class="msg-header">
+                            <span class="sender"><i class="fa-solid fa-shield-cat"></i> ROSENIX AUTONOMOUS CORE</span>
+                            <span class="time">NOW</span>
+                        </div>
+                        <div class="msg-content">
+                            <p>Greetings, Commander **Roshab Bhandari**. The **Autonomous Agentic Bot Engine** is initialized.</p>
+                            <ul>
+                                <li><strong>Developer:</strong> Roshab Bhandari</li>
+                                <li><strong>Specialized Agents:</strong> Manager, Coding, Research, DevOps, CyberSec, Browser</li>
+                                <li><strong>Tools & MCP:</strong> Python Code Runner, File Workspace, Defensive Audit, MCP Client</li>
+                                <li><strong>Execution Loop:</strong> ReAct Planner & Self-Reflection Active</li>
+                            </ul>
+                            <p>Issue an autonomous goal or directive, sir.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bottom Command Input Dock -->
+                <div class="input-dock">
+                    <button class="mic-btn" id="mic-btn" title="Toggle Voice Command Listening">
+                        <i class="fa-solid fa-microphone"></i>
+                        <span class="mic-pulse"></span>
+                    </button>
+
+                    <div class="voice-transcript-banner" id="voice-transcript-banner" style="display: none;">
+                        <i class="fa-solid fa-ear-listen fa-beat"></i> Listening: <span id="live-speech-text">Speak now...</span>
+                    </div>
+
+                    <div class="input-wrapper">
+                        <textarea id="command-input" rows="1" placeholder="Issue autonomous goal or ask JARVIS... (Shift+Enter for newline)"></textarea>
+                        <button class="attach-btn" id="attach-btn" title="Attach file">
+                            <i class="fa-solid fa-paperclip"></i>
+                        </button>
+                    </div>
+
+                    <button class="send-btn" id="send-btn">
+                        <span>EXECUTE</span>
+                        <i class="fa-solid fa-bolt"></i>
+                    </button>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="/static/js/voice.js"></script>
+    <script src="/static/js/app.js"></script>
+</body>
+</html>
